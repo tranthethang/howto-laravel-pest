@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use App\Services\Users;
+use Dedoc\Scramble\Scramble;
+use Dedoc\Scramble\Support\Generator\OpenApi;
+use Dedoc\Scramble\Support\Generator\SecurityScheme;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,6 +27,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+//        Scramble::extendOpenApi(function (OpenApi $openApi) {
+//            $openApi->secure(SecurityScheme::http('bearer', 'JWT'));
+//            return $openApi;
+//        });
     }
 }

@@ -18,7 +18,7 @@ class TrustRequestMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $apiKey = $request->header(config('api.key.name'));
+        $apiKey = $request->header(config('X-Api-Key'));
 
         if ($apiKey !== config('constant.api_key')) {
             throw new NotTrustRequestException();
