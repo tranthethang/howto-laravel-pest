@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'api_key' => env('API_KEY'),
+    'x_api_key' => env('APP_API_KEY', 'secret'),
 ];

@@ -83,5 +83,7 @@ return [
         RestrictedDocsAccess::class,
     ],
 
-    'extensions' => ['apiKey', 'oauth2'],
+    'extensions' => [
+        \App\Services\Scramble\HeadersExtension::class,
+    ],
 ];

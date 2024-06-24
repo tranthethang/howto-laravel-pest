@@ -15,6 +15,9 @@ use App\Services\Users\RegisterServiceInterface;
         $this->registerService = $registerService;
     }
 
+    /**
+     * @unauthenticated
+     */
     public function handle(RegisterRequest $registerRequest)
     {
         $form = $registerRequest->validated();
