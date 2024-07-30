@@ -11,7 +11,7 @@ use Dedoc\Scramble\Support\RouteInfo;
 
 class HeadersExtension extends OperationExtension
 {
-    public function handle(Operation $operation, RouteInfo $routeInfo)
+    public function handle(Operation $operation, RouteInfo $routeInfo): void
     {
         $operation->addParameters([
             Parameter::make('X-API-KEY', 'header')
