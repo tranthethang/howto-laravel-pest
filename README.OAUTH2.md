@@ -5,7 +5,7 @@ OAuth2
 + passport
 ```shell
 # Generates the encryption keys Passport needs in order to generate access tokens.
-php artisan passport:keys
+php artisan passport:keys --force
 
 # Creating A Password Grant Client
 php artisan passport:client --password

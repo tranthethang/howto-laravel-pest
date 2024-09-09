@@ -21,7 +21,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        Passport::enablePasswordGrant();
+        Passport::ignoreRoutes();
     }
 
     /**
@@ -29,17 +30,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Passport::enablePasswordGrant();
-
         Scramble::afterOpenApiGenerated(function (OpenApi $openApi) {
-            //$openApi->secure(SecurityScheme::http('bearer', 'JWT'));
-
             $openApi->secure(SecurityScheme::oauth2()
                 ->flow('password', function (OAuthFlow $flow) {
                     $flow
-                        ->authorizationUrl(route('passport.authorizations.authorize'))
-                        ->refreshUrl(route('passport.token.refresh'))
-                        ->tokenUrl(route('passport.token'));
+                        //->authorizationUrl(route('passport.authorizations.authorize'))
+                        ->refreshUrl(route('token.refresh')) //passport.token.refresh
+                        ->tokenUrl(route('token.access')); //passport.token
                 }));
         });
     }
