@@ -22,7 +22,7 @@ class RegisterService implements RegisterServiceInterface
             ]);
         } catch (Exception $e) {
             Log::error($e->getMessage());
-            throw new CannotRegisterUserException();
+            throw new CannotRegisterUserException;
         }
     }
 }

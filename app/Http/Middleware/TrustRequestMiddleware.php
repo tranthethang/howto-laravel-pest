@@ -22,7 +22,7 @@ class TrustRequestMiddleware
         $match = trim(config('constant.x_api_key'));
 
         if ($match && $apiKey !== $match) {
-            throw new NotTrustRequestException();
+            throw new NotTrustRequestException;
         }
 
         return $next($request);
