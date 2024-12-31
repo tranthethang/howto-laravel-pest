@@ -3,16 +3,18 @@
 namespace App\Http\Controllers\Api\Auth;
 
 use AllowDynamicProperties;
+use App\Http\Requests\Api\TokenRequest;
 use App\Http\Resources\TokenResource;
-use Laravel\Passport\Http\Controllers\AccessTokenController as BaseAccessTokenController;
-use Psr\Http\Message\ServerRequestInterface;
 
-#[AllowDynamicProperties] class AccessTokenController extends BaseAccessTokenController
+#[AllowDynamicProperties] class AccessTokenController extends TokenController
 {
-    public function issueToken(ServerRequestInterface $request)
+    /**
+     * Authorize a client to access the user's account by email and password.
+     *
+     * @return TokenResource
+     */
+    public function handle(TokenRequest $request)
     {
-        $data = parent::issueToken($request);
-
-        return new TokenResource(json_decode($data->getContent(), true));
+        return $this->exec($request);
     }
 }

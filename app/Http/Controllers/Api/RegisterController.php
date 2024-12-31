@@ -16,6 +16,8 @@ use App\Services\Users\RegisterServiceInterface;
     }
 
     /**
+     * Register a new account.
+     *
      * @unauthenticated
      */
     public function handle(RegisterRequest $registerRequest)

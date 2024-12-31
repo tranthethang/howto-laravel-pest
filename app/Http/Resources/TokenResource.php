@@ -18,7 +18,7 @@ class TokenResource extends JsonResource
             'access_token' => data_get($this, 'access_token'),
             'refresh_token' => data_get($this, 'refresh_token'),
             'token_type' => data_get($this, 'token_type'),
-            'expires_in' => data_get($this, 'expires_in'),
+            'expires_in' => (int) data_get($this, 'expires_in'),
         ];
     }
 }
