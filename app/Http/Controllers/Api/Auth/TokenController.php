@@ -18,7 +18,7 @@ use Nyholm\Psr7\ServerRequest;
             $request->headers->all(),            // Headers
             $request->getContent(),              // Body content
             '1.1',                        // Protocol version
-            $request->server->all()              // Server parameters
+            $request->server->all(),              // Server parameters
         );
 
         $serverRequest = $serverRequest

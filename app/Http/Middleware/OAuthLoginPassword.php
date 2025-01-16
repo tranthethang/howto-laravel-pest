@@ -11,13 +11,13 @@ class OAuthLoginPassword
     /**
      * Handle an incoming request.
      *
-     * @param  Closure(Request): (Response)  $next
+     * @param Closure(Request): (Response) $next
      */
     public function handle(Request $request, Closure $next, string $type = 'password'): Response
     {
         $request->merge([
-            'grant_type' => $type,
-            'client_id' => config('oauth.password.client_id'),
+            'grant_type'    => $type,
+            'client_id'     => config('oauth.password.client_id'),
             'client_secret' => config('oauth.password.client_secret'),
         ]);
 
