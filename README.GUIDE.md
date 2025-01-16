@@ -19,5 +19,5 @@ php artisan ide-helper:meta
 
 __2.__ Generate PhpDocuments
 ```shell
-php phpdoc.phar -d ./app
+php phpdoc.phar -d app,config,database,resources
 ```

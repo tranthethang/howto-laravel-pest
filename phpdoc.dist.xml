@@ -6,7 +6,6 @@
     <paths>
         <output>docs/.build</output>
     </paths>
-
     <setting name="template.color" value="orange"/>
 
 </phpdocumentor>
